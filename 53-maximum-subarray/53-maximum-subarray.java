@@ -4,7 +4,6 @@ class Solution {
         
         for (int i = 1; i < nums.length; i++){
             currBest = Math.max(nums[i], nums[i] + currBest);
-            //start fresh, extend
             max = Math.max(currBest, max);
         }
         return max;
