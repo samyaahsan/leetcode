@@ -15,11 +15,19 @@
  */
 class Solution {
     public int maxDepth(TreeNode root) {
-        if (root == null)
+        // base case
+        // the root we are at is null, so its depth is 0
+        if(root == null) {
             return 0;
-            
-        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+        }
         
+        // recursive case
+        // we are at a non null node so return 1 (for our current node)
+        // + max of the left subtree depth and the right subtree depth
+        int leftDepth = maxDepth(root.left);
+        int rightDepth = maxDepth(root.right);
+        return 1 + Math.max(leftDepth, rightDepth);
+        //return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
         
     }
 }
