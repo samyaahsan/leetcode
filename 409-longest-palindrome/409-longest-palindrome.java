@@ -3,21 +3,23 @@ class Solution {
         Set<Character> set = new HashSet<>();
         
         int count = 0;
+        
         for (int i = 0; i < s.length(); i++){
             if (set.contains(s.charAt(i))){
                 set.remove(s.charAt(i));
                 count++;
             }
             else{
-               set.add(s.charAt(i));
+                set.add(s.charAt(i));
             }
-            
         }
         
-        if (!(set.size() == 0))
-            return count * 2 + 1;
-        
-        return count * 2;
+        if (set.isEmpty()){
+            return (count * 2);
+        }
+        else{
+            return (count * 2 + 1);
+        }
         
     }
 }
