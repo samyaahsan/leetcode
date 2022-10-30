@@ -25,7 +25,7 @@ class Solution {
             else{
                 ans.add(Arrays.asList(nums[i], nums[l], nums[h]));
                 ++l;
-                --h;
+                //--h;
                 while (l < h && nums[l-1] == nums[l]){
                     ++l;
                 }
